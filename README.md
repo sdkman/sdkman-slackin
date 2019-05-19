@@ -19,7 +19,19 @@ The repo was forked to make minor tweaks to the Dockerfile so that it can be use
 Run it locally with the following command, passing in environment variables as needed:
 
 ```
-docker run -e "SLACK_ORG=sdkman" -e "SLACK_TOKEN=???" -e "GOOGLE_CAPTCHA_SECRET=???" -e "GOOGLE_CAPTCHA_SITEKEY=???" sdkman/sdkman-slackin:0.1.0
+docker run -e "SLACK_ORG=sdkman" -e "SLACK_TOKEN=???" -e "GOOGLE_CAPTCHA_SECRET=???" -e "GOOGLE_CAPTCHA_SITEKEY=???" sdkman/sdkman-slackin:latest
 ```
 
-
+Or in Ansible using `docker_service`:
+```
+slackin:
+  image: "{{ slackin_docker_image }}"
+  container_name: sdkman-slackin
+  expose:
+    - "3000"
+  environment:
+    - SLACK_ORG=sdkman
+    - SLACK_TOKEN={{ slack_token }}
+    - GOOGLE_CAPTCHA_SECRET={{ google_captcha_secret }}
+    - GOOGLE_CAPTCHA_SITEKEY={{ google_captcha_sitekey }}
+```
