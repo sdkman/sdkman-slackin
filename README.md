@@ -1,6 +1,6 @@
 ## Slackin for SDKMAN
 
-[![Slack](https://img.shields.io/badge/chat-on%20slack-red.svg)](https://slack.sdkman.io)
+[![Slack](https://slack.sdkman.io/badge.svg)](https://slack.sdkman.io)
 
 ## What?
 
